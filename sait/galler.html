@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "css/style1.css.css" rel = "stylesheet" type="text/css">
+<meta http-equiv = "Content-Type" 
+	content = "text/html; charset = utf-8">
+<title>
+	Авторизация
+</title>
+</head>
+<body>
+	<div id="content">
+		<h2>Форма авторизации</h2>
+		<form id="loginForm">
+			<label for="username">Имя:</label>
+			<input type="text" id="username" required>
+			<label for="password">Пароль:</label>
+			<input type="password" id="password" required>
+			<button type="submit">Войти</button>
+		</form>
+	</div>
+
+	<script>
+		document.getElementById('loginForm').addEventListener('submit', function(event) {
+			event.preventDefault();
+			const username = document.getElementById('username').value;
+			if (username === 'user1') {
+				window.location.href = 'gallery.html'; // Переход на галерею с кнопкой загрузки
+			} else if (username === 'user2') {
+				window.location.href = 'gallery_no_upload.html'; // Переход на галерею без кнопки загрузки
+			} else {
+				alert('Неверное имя пользователя');
+			}
+		});
+	</script>
+</body>
+</html>
